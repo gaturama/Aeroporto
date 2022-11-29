@@ -1,32 +1,41 @@
 public abstract class Aeronave {
     
+    private int id;
     private String modelo;
-    private String companhia;
+    private String marca;
 
     protected Aeronave(
+     int id,
      String modelo,
-     String companhia
+     String marca
     ) {
+        this.id = id;
         this.modelo = modelo;
-        this.companhia = companhia;
+        this.marca = marca;
     }
 
+    public int getId() {
+        return id;
+    }
+    public void setId( int id){
+        this.id = id;
+    }
     public String getModelo() {
         return modelo;
     }
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public String getCompanhia() {
-        return companhia;
+    public String getmarca() {
+        return marca;
     }
-    public void setCompanhia(String companhia) {
-        this.companhia = companhia;
+    public void setmarca(String marca) {
+        this.marca = marca;
     }
 
     @Override
     public String toString() {
         return "Modelo: " + modelo + "\n" +
-               "Companhia: " + companhia + "\n";
+               "Marca: " + marca + "\n";
     }
 }
