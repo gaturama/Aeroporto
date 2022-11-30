@@ -8,7 +8,12 @@ public class Voo {
     private String piloto;
     private String copiloto;
     private String observacao;
-    
+
+    private int idAviao;
+    private int idPista;
+    private int idHelicoptero;
+    private int idJato;
+
     public Voo(
         int id,
         String numero,
@@ -17,7 +22,11 @@ public class Voo {
         String destino,
         String piloto,
         String copiloto,
-        String observacao
+        String observacao,
+        Aviao aviao,
+        Pista pista,
+        Helicoptero helicoptero,
+        Jato jato
     ){
         this.id = id;
         this.numero = numero;
@@ -27,6 +36,10 @@ public class Voo {
         this.piloto = piloto;
         this.copiloto = copiloto;
         this.observacao = observacao;
+        this.idAviao = aviao.getId();
+        this.idPista = pista.getId();
+        this.idHelicoptero = helicoptero.getId();
+        this.idJato = jato.getId();
     }
     public int getId(){
         return id;
@@ -86,7 +99,10 @@ public class Voo {
             + "Destino: " + destino + "\n"
             + "Piloto: " + piloto + "\n"
             + "Copiloto: " + copiloto + "\n"
-            + "Observação: " + observacao + "\n";
+            + "Observação: " + observacao + "\n"
+            + "Avião: " + this.idAviao + "\n"
+            + "Helicoptero: " + this.idHelicoptero + "\n"
+            + "Jato: " + this.idJato + "\n"
+            + "Pista: " + this.idPista + "\n";
     }
-    
 }

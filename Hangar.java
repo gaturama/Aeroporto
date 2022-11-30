@@ -2,13 +2,18 @@ public class Hangar {
     
     private int id;
     private String local;
+
+    private int idAviao;
     
     public Hangar(
         int id,
-        String local
+        String local,
+        Aviao aviao
    ){
         this.id = id;
         this.local = local;
+
+        this.idAviao = aviao.getId();
     }
     
     public int getId(){
@@ -27,6 +32,7 @@ public class Hangar {
     @Override
     public String toString(){
         return "ID: " + id + "\n"
-        + "Local: " + local + "\n";
+        + "Local: " + local + "\n"
+        + "Avião: " + this.idAviao + "\n";
     }
 }
