@@ -117,6 +117,21 @@ public class Aeroporto {
             System.out.println("Digite o modelo do avião: ");
             String modelo = scanner.next();
             System.out.println("Digite a marca do avião: ");
+            String marca = scanner.next();
+            System.out.println("Digite a capacidade do avião: ");
+            String capacidade = scanner.next();
+            System.out.println("Digite o prefixo do avião: ");
+            String prefixo = scanner.next();
+            
+            new Aviao(id, modelo, marca, capacidade, prefixo);
+        }catch(Exception e){
+            System.out.println("Erro ao cadastrar o Avião");
+        }
+        
+        public static void listarAviao(){
+            for(Aviao aviao : Aviao.avioes){
+                System.out.println(aviao);
+            }
         }
     }
 }
