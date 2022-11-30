@@ -9,7 +9,7 @@ public abstract class Aeronave {
      String modelo,
      String marca
     ) {
-        this.id = id;
+        this.setId(id);
         this.modelo = modelo;
         this.marca = marca;
     }
