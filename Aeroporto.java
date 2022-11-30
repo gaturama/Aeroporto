@@ -133,5 +133,49 @@ public class Aeroporto {
                 System.out.println(aviao);
             }
         }
+        public static void removeAviao(Scanner scanner){
+            System.out.println("Remover Avião");
+            System.out.println("Digite o ID do Avião");
+            int id = scanner.nextInt();
+            try{
+                Aviao.removeAviao(idAviao);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+        
+        public static void cadastrarHelicoptero(Scanner scanner){
+            try{
+                System.out.println("Cadastrar Helicoptero");
+                System.out.println("Digite o ID do Helicoptero: ");
+                int id = scanner.nextInt();
+                System.out.println("Digite a marca do Helicoptero: ");
+                String marca = scanner.next();
+                System.out.println("Digite o modelo do Helicoptero: ");
+                String modelo = scanner.next();
+                System.out.println("Digite a capacidade do Helicoptero: ");
+                String capacidade = scanner.next();
+                System.out.println("Digite a cor do Helicoptero: ");
+                String cor = scanner.next();
+                
+                new Helicoptero(id, marca, modelo, capacidade, cor);
+            }catch (Exception e) {
+                System.out.println("Erro ao cadastrar o Helicoptero.");
+            }
+            
+            public static void listarHelicoptero(){
+                for(Helicoptero helicoptero : Helicoptero.helicopteros){
+                    System.out.println(helicoptero);
+                }
+            }
+            
+            public static void removeHelicoptero(Scanner scanner){
+                System.out.println("Remover Helicoptero");
+                System.out.println("Digite o ID do helicoptero: ");
+                int id = scanner.nextInt();
+                try{
+                    Helicoptero.removeHelicoptero(id);
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
     }
 }
