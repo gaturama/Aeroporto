@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+
 public class Jato extends Aeronave{
 
     private int velocidade;
     private String cor;
+    
+    public static ArrayList<Jato> jatos = new ArrayList<>();
 
     public Jato(
 
@@ -28,7 +32,20 @@ public class Jato extends Aeronave{
     public void setCor(String cor){
         this.cor = cor;
     }
-  
+    public static Jato getJato(int id) throws Exception{
+        for(Jato jato : jatos){
+            if(jato.getId() == id){
+                return jato;
+            }
+        }
+        throw new Exception("Jato não encontrado");
+    }
+    
+    public static void removeJato(int id) throws Exception{
+        Jato jato = getJato(id);
+        jatos.remove(jato);
+    }
+    
     @Override
     public String toString(){
         return "ID: " + super.getId() + "\n"
