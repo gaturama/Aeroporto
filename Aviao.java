@@ -39,7 +39,7 @@ public class Aviao extends Aeronave {
         this.prefixo = prefixo;
     }
     
-    public static Aviao getAviao(int id) throws Exception{
+    public static Aviao getAviaoById(int id) throws Exception{
         for(Aviao aviao : avioes){
             if(aviao.getId() == id){
                 return aviao;
@@ -48,8 +48,8 @@ public class Aviao extends Aeronave {
         throw new Exception("Avião não encontrado");
     }
     
-    public static void removeAviao(int id) throws Exception{
-        Aviao aviao = getAviao(id);
+    public static void excluir(int id) throws Exception{
+        Aviao aviao = getAviaoById(id);
         avioes.remove(aviao);
     }
     

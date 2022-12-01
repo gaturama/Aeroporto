@@ -48,7 +48,7 @@ public class Aeroporto {
                     listarAviao();
                     break;
                 case 3:
-                    removeAviao(scanner);
+                    excluirAviao(scanner);
                     break;
                 case 4:
                     cadastrarHelicoptero(scanner);
@@ -57,7 +57,7 @@ public class Aeroporto {
                     listarHelicoptero();
                     break;
                 case 6: 
-                    removeAviao(scanner);
+                    excluirHelicoptero(scanner);
                     break;
                 case 7: 
                     cadastrarJato(scanner);
@@ -66,7 +66,7 @@ public class Aeroporto {
                     listarJato();
                     break;
                 case 9: 
-                    removerJato(scanner);
+                    excluirJato(scanner);
                     break;
                 case 10:
                     cadastrarCompanhia(scanner);
@@ -75,7 +75,7 @@ public class Aeroporto {
                     listarCompanhia();
                     break;
                 case 12: 
-                    removeCompanhia(scanner);
+                    excluirCompanhia(scanner);
                     break;
                 case 13: 
                     cadastrarVoo(scanner);
@@ -84,7 +84,7 @@ public class Aeroporto {
                     listarVoo();
                     break;
                 case 15:
-                    removeVoo(scanner);
+                    excluirVoo(scanner);
                     break;
                 case 16: 
                     cadastrarHangar(scanner);
@@ -93,7 +93,7 @@ public class Aeroporto {
                     listarHangar();
                     break;
                 case 18:
-                    removeHangar(scanner);                          
+                    excluirHangar(scanner);                          
                     break;
                 case 19: 
                     cadastrarPista(scanner);
@@ -102,80 +102,80 @@ public class Aeroporto {
                     listarPista();
                     break;
                 case 21:
-                    removePista(scanner);
+                    excluirPista(scanner);
                     break;                              
             }
         }while(opcao!= 0);
         scanner.close();
     }
-
-    public static void cadastrarAviao(Scanner scanner){
-        try{
-            System.out.println("Cadastar Avião");
-            System.out.println("Digite o ID do avião: ");
-            int id = scanner.nextInt();
-            System.out.println("Digite o modelo do avião: ");
-            String modelo = scanner.next();
-            System.out.println("Digite a marca do avião: ");
-            String marca = scanner.next();
-            System.out.println("Digite a capacidade do avião: ");
-            String capacidade = scanner.next();
-            System.out.println("Digite o prefixo do avião: ");
-            String prefixo = scanner.next();
-            
-            new Aviao(id, modelo, marca, capacidade, prefixo);
-        }catch(Exception e){
-            System.out.println("Erro ao cadastrar o Avião");
+        public static void cadastrarAviao(Scanner scanner){
+            try{
+                System.out.println("Cadastrar Avião");
+                System.out.println("Digite o ID do avião: ");
+                int id = scanner.nextInt();
+                System.out.println("Digite o modelo do avião: ");
+                String modelo = scanner.next();
+                System.out.println("Digite a marca do avião: ");
+                String marca = scanner.next();
+                System.out.println("Digite a capacidade do avião: ");
+                String capacidade = scanner.next();
+                System.out.println("Digite o prefixo do avião: ");
+                String prefixo = scanner.next();
+                
+                new Aviao(id, modelo, marca, capacidade, prefixo, null);
+            }catch(Exception e){
+                System.out.println("Erro ao cadastrar o Avião");
+            }
         }
-        
         public static void listarAviao(){
             for(Aviao aviao : Aviao.avioes){
                 System.out.println(aviao);
             }
         }
-        public static void removeAviao(Scanner scanner){
-            System.out.println("Remover Avião");
-            System.out.println("Digite o ID do Avião");
-            int id = scanner.nextInt();
+
+        public static void excluirAviao(Scanner scanner){
             try{
-                Aviao.removeAviao(idAviao);
+                System.out.println("Digite o ID do carro: ");
+                int id = scanner.nextInt();
+                Aviao.excluir(id);
+                System.out.println("Avião excluído com êxito!!!");
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
         }
-        
+
         public static void cadastrarHelicoptero(Scanner scanner){
             try{
                 System.out.println("Cadastrar Helicoptero");
-                System.out.println("Digite o ID do Helicoptero: ");
-                int id = scanner.nextInt();
-                System.out.println("Digite a marca do Helicoptero: ");
-                String marca = scanner.next();
-                System.out.println("Digite o modelo do Helicoptero: ");
-                String modelo = scanner.next();
-                System.out.println("Digite a capacidade do Helicoptero: ");
-                String capacidade = scanner.next();
-                System.out.println("Digite a cor do Helicoptero: ");
-                String cor = scanner.next();
-                
-                new Helicoptero(id, marca, modelo, capacidade, cor);
-            }catch (Exception e) {
-                System.out.println("Erro ao cadastrar o Helicoptero.");
-            }
-            
-            public static void listarHelicoptero(){
-                for(Helicoptero helicoptero : Helicoptero.helicopteros){
-                    System.out.println(helicoptero);
-                }
-            }
-            
-            public static void removeHelicoptero(Scanner scanner){
-                System.out.println("Remover Helicoptero");
                 System.out.println("Digite o ID do helicoptero: ");
                 int id = scanner.nextInt();
-                try{
-                    Helicoptero.removeHelicoptero(id);
-                }catch (Exception e){
-                    System.out.println(e.getMessage());
-    }
+                System.out.println("Digite o modelo do helicoptero: ");
+                String modelo = scanner.next();
+                System.out.println("Digite a marca do helicoptero: ");
+                String marca = scanner.next();
+                System.out.println("Digite a capacidade do helicoptero: ");
+                int capacidade = scanner.nextInt();
+                System.out.println("Digite a cor do helicoptero: ");
+                String cor = scanner.next();
+
+                new Helicoptero(id, marca, modelo, capacidade, cor);
+            }catch(Exception e){
+                System.out.println("Erro ao cadastrar helicoptero");
+            }
+        }    
+        public static void listarHelicoptero(){
+            for(Helicoptero helicoptero : Helicoptero.helicopteros){
+                System.out.println(helicoptero);
+            }
+        }       
+        public static void excluirHelicoptero(Scanner scanner){
+            try{
+                System.out.println("Digite o ID do Helicoptero: ");
+                int id = scanner.nextInt();
+                Helicoptero.excluir(id);
+                System.out.println("Avião excluído com êxito!!!");
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }    
+        }
 }

@@ -33,7 +33,7 @@ public class Helicoptero extends Aeronave {
         this.cor = cor;
     }
     
-    public static Helicoptero getHelicoptero(int id) throws Exception{
+    public static Helicoptero getHelicopteroById(int id) throws Exception{
         for(Helicoptero helicoptero : helicopteros){
             if(helicoptero.getId() == id){
                 return helicoptero;
@@ -42,9 +42,9 @@ public class Helicoptero extends Aeronave {
          throw new Exception("Helicoptero não foi encontrado");  
     }
     
-    public static void removeHelicoptero(int id) throws Exception{
-        Helicoptero helicoptero = getHelicoptero(id);
-        helicopteros.remove(helicoptero);
+    public static void excluirHelicoptero(int id) throws Exception{
+        Helicoptero helicoptero = getHelicopteroById(id);
+        helicoptero.remove(helicoptero);
     }
     
     @Override
