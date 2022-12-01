@@ -32,7 +32,7 @@ public class Jato extends Aeronave{
     public void setCor(String cor){
         this.cor = cor;
     }
-    public static Jato getJato(int id) throws Exception{
+    public static Jato getJatoById(int id) throws Exception{
         for(Jato jato : jatos){
             if(jato.getId() == id){
                 return jato;
@@ -41,8 +41,8 @@ public class Jato extends Aeronave{
         throw new Exception("Jato não encontrado");
     }
     
-    public static void removeJato(int id) throws Exception{
-        Jato jato = getJato(id);
+    public static void excluir(int id) throws Exception{
+        Jato jato = getJatoById(id);
         jatos.remove(jato);
     }
     
