@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Voo {
     
     private int id;
@@ -13,6 +15,8 @@ public class Voo {
     private int idPista;
     private int idHelicoptero;
     private int idJato;
+    
+    public static ArrayList<Voo> voos = new ArrayList<>();
 
     public Voo(
         int id,
@@ -40,6 +44,8 @@ public class Voo {
         this.idPista = pista.getId();
         this.idHelicoptero = helicoptero.getId();
         this.idJato = jato.getId();
+        
+        voos.add(this);
     }
     public int getId(){
         return id;
@@ -88,6 +94,20 @@ public class Voo {
     }
     public void setObservacao(String observacao){
         this.observacao = observacao;
+    }
+    
+    public static Voo getVooById(int id) throws Exception{
+          for(Voo voo : Voos){
+            if(Voo.getId() == id){
+                return Voo;
+            }
+        }
+        throw new Exception("Jato não encontrado");
+    }
+    
+    public static void excluir(int id) throws Exception{
+        Voo voo = getVooById(id);
+        voos.remove(jato);
     }
     
     @Override
