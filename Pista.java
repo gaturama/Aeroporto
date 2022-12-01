@@ -1,7 +1,11 @@
+import java.util.ArrayList
+
 public class Pista {
 
     private int id;
     private String numero;
+    
+    public static ArrayList<Pista> pistas = new ArrayList<>();
     
     public Pista(
         int id,
@@ -9,6 +13,8 @@ public class Pista {
     ){
         this.id = id;
         this.numero = numero;
+        
+        pistas.add(this);
     }
     public int getId(){
         return id;
@@ -21,6 +27,20 @@ public class Pista {
     }
     public void setNumero(String numero){
         this.numero = numero;
+    }
+    
+    public static Pista getPistaById(int id) throws Exception{
+        for(Pista pista : pistas){
+            if(pista.getId() == id){
+                return pista;
+            }
+        }
+        throw new Exception("Pista não encontrada");
+    }
+    
+    public static void excluir(int id) throws Exception{
+        Pista pista = getPistaById(id); 
+         pista.remove(pista);
     }
 
     @Override
