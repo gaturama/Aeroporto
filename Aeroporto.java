@@ -178,4 +178,23 @@ public class Aeroporto {
                 System.out.println(e.getMessage());
             }    
         }
+        public static void cadastrarJato(Scanner scanner) {
+            try{
+                System.out.println("Cadastrar Jato");
+                System.out.println("Digite o ID do jato: ");
+                int id = scanner.nextInt();
+                System.out.println("Digite o modelo do jato: ");
+                String modelo = scanner.next();
+                System.out.println("Digite a marca do jato: ");
+                String marca = scanner.next();
+                System.out.println("Digite a velocidade do jato: ")
+                int velocidade = scanner.nextInt();
+                System.out.println("Digite a cor do jato: ")
+                String cor = scanner.next();
+                
+                new Jato(id, modelo, marca, velocidade, cor);
+            }catch(Exception e) {
+                System.out.println("Erro ao cadastrar o jato");
+            }
+        }
 }
