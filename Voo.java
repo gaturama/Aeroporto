@@ -97,9 +97,9 @@ public class Voo {
     }
     
     public static Voo getVooById(int id) throws Exception{
-          for(Voo voo : Voos){
-            if(Voo.getId() == id){
-                return Voo;
+          for(Voo voo : voos){
+            if(voo.getId() == id){
+                return voo;
             }
         }
         throw new Exception("Jato não encontrado");
@@ -107,7 +107,7 @@ public class Voo {
     
     public static void excluir(int id) throws Exception{
         Voo voo = getVooById(id);
-        voos.remove(jato);
+        voos.remove(voo);
     }
     
     @Override

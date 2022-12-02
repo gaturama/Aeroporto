@@ -197,4 +197,43 @@ public class Aeroporto {
                 System.out.println("Erro ao cadastrar o jato");
             }
         }
+
+        public static void listarJato(){
+            for(Jato jato : Jato.jatos){
+                System.out.println(jato);
+            }
+        }
+
+        public static void excluirJato(Scanner scanner){
+            try{
+                System.out.println("Digite o ID do jato: ");
+                int id = scanner.nextInt();
+                Jato.excluir(id);
+                System.out.println("Avião excluído com êxito!!");
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        public static void cadastrarCompanhia(Scanner scanner){
+            try{
+                System.out.println("Cadastrar Companhia");
+                System.out.println("Digite o ID do companhia: ");
+                int id = scanner.nextInt();
+                System.out.println("Digite o nome da companhia: ");
+                String nome = scanner.next();
+                System.out.println("Digite o CNPJ da companhia: ");
+                String cnpj = scanner.next();
+
+                new Companhia(id, nome, cnpj);
+        }catch (Exception e){
+            System.out.println("Erro ao cadastrar o companhia");
+        }
+    }
+
+        public static void listarCompanhia(){
+            for(Companhia companhia : Companhia.){
+                System.out.println(companhia);
+            }
+        }
 }

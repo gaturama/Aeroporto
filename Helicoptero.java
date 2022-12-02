@@ -42,9 +42,9 @@ public class Helicoptero extends Aeronave {
          throw new Exception("Helicoptero não foi encontrado");  
     }
     
-    public static void excluirHelicoptero(int id) throws Exception{
+    public static void excluir(int id) throws Exception{
         Helicoptero helicoptero = getHelicopteroById(id);
-        helicoptero.remove(helicoptero);
+        helicopteros.remove(helicoptero);
     }
     
     @Override

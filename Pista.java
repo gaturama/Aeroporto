@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 
 public class Pista {
 
@@ -40,7 +40,7 @@ public class Pista {
     
     public static void excluir(int id) throws Exception{
         Pista pista = getPistaById(id); 
-         pista.remove(pista);
+         pistas.remove(pista);
     }
 
     @Override

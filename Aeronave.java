@@ -49,7 +49,7 @@ public abstract class Aeronave {
     }
     
     public static void excluir(int id) throws Exception{
-        Aeronave Aeronave = getAeronaveById(id);
+        Aeronave aeronave = getAeronaveById(id);
         aeronaves.remove(aeronave);
     }
     

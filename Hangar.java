@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 
 public class Hangar {
     
@@ -45,7 +45,7 @@ public class Hangar {
     
     public static void excluir(int id) throws Exception{
         Hangar hangar = getHangarById(id);
-        hangares.remove(jato);
+        hangares.remove(hangar);
     }
     
     @Override
