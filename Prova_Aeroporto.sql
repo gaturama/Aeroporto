@@ -150,6 +150,8 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+USE mydb;
+
 INSERT INTO `mydb`.`Companhia`(id,nome,cnpj) VALUES (1, 'AeroParque', '78924615379'),
 (2, 'Golazinho', '46898725410'),
 (3, 'Voa', '89541032521'),
@@ -183,4 +185,8 @@ INSERT INTO `mydb`.`Jato`(id,marca,modelo,cor) VALUES (1,'Ford', 'Falcon 5Z', 'B
 (5,'Lexus', 'Tiger 11TZ', 'Verde');
 
 INSERT INTO `mydb`.`Voo`(id,numero,data,hora,origem,destino,piloto,copiloto,observacao,id_aviao,id_pista,id_jato,id_helicoptero)
-VALUES (1,'AAA123456', '2010-12-18', '08:30', 'Minas Gerais', 'São Paulo', 'Jorge', 'Vardi', 'Viagem chuvosa', 4, 2, 3, )
+VALUES (1,'AAA123456', '2010-12-18', '08:30', 'Minas Gerais', 'São Paulo', 'Jorge', 'Vardi', 'Viagem chuvosa', 4, 2, 3, 5),
+(2, 'BBB111213', '2004-05-16', '09:12', 'Mato Grosso', 'Bahia', 'Felipe', 'Eduardo', 'Sol e calor', 1, 4, 5, 3),
+(3, 'CCC343536', '2000-10-02', '11:35', 'Rio de Janeiro', 'França', 'Clod', 'Matthia', 'Tranquilo', 3, 5, 2, 4),
+(4, 'DDD654321', '1989-02-08', '19:20', 'Estados Unidos', 'Marrocos', 'John', 'Michael', 'Relax', 2, 1, 4, 1),
+(5, 'EEE545556', '2022-12-03', '02:55', 'Rio Grande do Sul', 'Paraná', 'Jorge', 'Batista', 'Sussegado', 5, 3, 1, 2);
