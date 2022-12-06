@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Aeroporto {
+//programa principal 
     
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -40,7 +41,7 @@ public class Aeroporto {
                 opcao = 0;
             }
 
-            switch (opcao) {
+            switch (opcao) { 
                 case 1:
                     cadastrarAviao(scanner);
                     break;
@@ -108,7 +109,8 @@ public class Aeroporto {
         }while(opcao!= 0);
         scanner.close();
     }
-        public static void cadastrarAviao(Scanner scanner){
+        public static void cadastrarAviao(Scanner scanner){ 
+            //função que realiza o cadastro, puxando as informações da classe conforme os comandos.
             try{
                 System.out.println("Cadastro de Avião");
                 System.out.println("Digite o ID do avião: ");
@@ -127,16 +129,18 @@ public class Aeroporto {
                 System.out.println("Erro ao cadastrar o Avião");
             }
         }
-        public static void listarAviao(){
+        public static void listarAviao(){ 
+            //comando para listar as informações adicionadas na função acima.
             System.out.println("Listar Avião");
             for(Aviao aviao : Aviao.avioes){
                 System.out.println(aviao);
             }
         }
 
-        public static void excluirAviao(Scanner scanner){
+        public static void excluirAviao(Scanner scanner){ 
+            //comando para excluir um cadastro realizado, como por exemplo o Avião.
             try{
-                System.out.println("Digite o ID do carro: ");
+                System.out.println("Digite o ID do Avião: ");
                 int id = scanner.nextInt();
                 Aviao.excluir(id);
                 System.out.println("Avião excluído com êxito!!!");
