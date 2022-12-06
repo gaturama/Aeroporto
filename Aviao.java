@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Aviao extends Aeronave {
     
-    private String capacidade;
+    private int capacidade;
     private String prefixo;
 
     private int idCompanhia;
@@ -13,7 +13,7 @@ public class Aviao extends Aeronave {
         int id,
         String modelo,
         String marca,
-        String capacidade,
+        int capacidade,
         String prefixo,
         Companhia companhia
 
@@ -26,10 +26,10 @@ public class Aviao extends Aeronave {
         
         avioes.add(this);
     }
-    public String getCapacidade(){
+    public int getCapacidade(){
         return capacidade;
     }
-    public void setCapacidade(String capacidade){
+    public void setCapacidade(int capacidade){
         this.capacidade = capacidade;
     }
     public String getPrefixo(){
