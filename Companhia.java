@@ -1,4 +1,8 @@
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 public class Companhia {
     
@@ -6,18 +10,25 @@ public class Companhia {
     private String nome;
     private String cnpj;
 
-    private static ArrayList<Companhia> companhias = new ArrayList<>();
+  
     
     public Companhia(
         int id,
         String nome,
         String cnpj
-    ){
+    )throws SQLException{
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
 
-        companhias.add(this);
+        PreparedStatement stmt = DAO.createConnection().prepareStatement(
+            "INSERT INTO Companhia (nome, cnpj ) VALUES (?, ?)"
+        );
+        stmt.setInt(1, id);
+        stmt.setString(3, nome);
+        stmt.setString(4, cnpj);
+        stmt.execute();
+        stmt.close();
     }
     
     public int getId(){
@@ -38,19 +49,48 @@ public class Companhia {
     public void setCnpj(String cnpj){
         this.cnpj = cnpj;
     }
-
-    public static Companhia getCompanhiaById(int id) throws Exception{
-        for (Companhia companhia : companhias){
-            if(companhia.getId() == id){
-                return companhia;
-            }
+    
+    public static void listarCompanhaia() throws SQLException{
+        Connection conex = DAO.createConnection();
+        ResultSet rs = conex.createStatement().executeQuery(
+            "SELECT * FROM Companhia;"
+        );
+        while(rs.next()){
+            System.out.println(
+                "ID: " + rs.getInt("id") + 
+                "Nome: " + rs.getInt("nome") +
+                "CNPJ: " +  rs.getString("cnpj") 
+                
+            );
         }
-        throw new Exception("Companhia não encontrado");
     }
 
-    public static void excluir(int id) throws Exception{
-        Companhia companhia = getCompanhiaById(id);
-        companhias.remove(companhia);
+    public static void updateCompanhia(int id) throws SQLException{
+        PreparedStatement stmt = DAO.createConnection().prepareStatement(
+            "UPDATE Companhia SET nome = ?, CNPJ = ? WHERE id = ?;"
+        );
+        stmt.setString(1, "João");
+        stmt.setInt(3, id);
+        stmt.execute();
+        stmt.close();
+    }
+
+    public void deleteCompanhia(int id) throws SQLException{
+        PreparedStatement stmt = DAO.createConnection().prepareStatement(
+            "DELETE FROM Companhia WHERE id = ?;"
+        );
+        stmt.setInt(1,id);
+        stmt.execute();
+        stmt.close();
+    }
+    @Override 
+   public boolean equals (Object object){
+       if(object == null || !(object instanceof Companhia)){
+           return false;
+       }
+       final Companhia other = (Companhia) object;
+
+       return this.getId() == other.getId();
     }
     
     @Override 

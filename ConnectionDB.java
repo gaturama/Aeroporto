@@ -49,7 +49,7 @@ public class ConnectionDB {
             "SELECT * FROM usuario;"
         );
         while(rs.next()){
-            Usuario usuario2 = new Usuario(
+            User usuario2 = new Usuario(
                 rs.getInt("id"), 
                 rs.getString("user_name"),
                 rs.getString("name"),

@@ -17,14 +17,14 @@ public class Aviao extends Aeronave {
         String marca,
         int capacidade,
         String prefixo,
-        Companhia companhia
+        int idCompanhia 
 
     )throws SQLException{
         super(id, modelo, marca);
         this.capacidade = capacidade;
         this.prefixo = prefixo;
        
-      this.idCompanhia = companhia.getId();
+      this.idCompanhia = idCompanhia;
 
       PreparedStatement stmt = DAO.createConnection().prepareStatement(
             "INSERT INTO Avião (capacidade, prefixo ) VALUES (?, ?)"

@@ -123,8 +123,10 @@ public class Aeroporto {
                 int capacidade = scanner.nextInt();
                 System.out.println("Digite o prefixo do avião: ");
                 String prefixo = scanner.next();
+                System.out.println("Digite o ID da companhia");
+                int idCompanhia = scanner.nextInt();
                 
-                new Aviao(id, modelo, marca, capacidade, prefixo, null);
+                new Aviao(id, modelo, marca, capacidade, prefixo, idCompanhia);
             }catch(Exception e){
                 System.out.println("Erro ao cadastrar o Avião");
             }
