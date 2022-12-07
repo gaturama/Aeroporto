@@ -1,12 +1,8 @@
-import java.util.ArrayList;
-
 public abstract class Aeronave {
     
     private int id;
     private String modelo;
     private String marca;
-    
-    
     
     protected Aeronave(
      int id,

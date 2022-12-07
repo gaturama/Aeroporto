@@ -96,19 +96,7 @@ public class Voo {
         this.observacao = observacao;
     }
     
-    public static Voo getVooById(int id) throws Exception{
-          for(Voo voo : voos){
-            if(voo.getId() == id){
-                return voo;
-            }
-        }
-        throw new Exception("Jato não encontrado");
-    }
-    
-    public static void excluir(int id) throws Exception{
-        Voo voo = getVooById(id);
-        voos.remove(voo);
-    }
+   
     
     @Override
     public String toString(){
