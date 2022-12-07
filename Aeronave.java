@@ -6,7 +6,7 @@ public abstract class Aeronave {
     private String modelo;
     private String marca;
     
-    public static ArrayList<Aeronave> aeronaves = new ArrayList<>();
+    
     
     protected Aeronave(
      int id,
@@ -17,7 +17,7 @@ public abstract class Aeronave {
         this.modelo = modelo;
         this.marca = marca;
         
-        aeronaves.add(this);
+       
     }
 
     public int getId() {
@@ -39,19 +39,7 @@ public abstract class Aeronave {
         this.marca = marca;
     }
     
-    public static Aeronave getAeronaveById(int id) throws Exception{
-        for(Aeronave aeronave : aeronaves){
-            if(aeronave.getId() == id){
-                return aeronave;
-            }
-        }
-        throw new Exception("Aeronave não encontrada");
-    }
-    
-    public static void excluir(int id) throws Exception{
-        Aeronave aeronave = getAeronaveById(id);
-        aeronaves.remove(aeronave);
-    }
+  
     
     @Override
     public String toString() {
